@@ -1,0 +1,33 @@
+mkdir inx-mern-be
+npm init -y
+npm install express mongoose cors dotenv
+npm install --save-dev typescript ts-node @types/node @types/express @types/cors nodemon
+
+npx tsc --init
+
+
+mkdir inx-mern-fe
+npx create-react-app . --template typescript
+npm install axios react-router-dom @types/react-router-dom
+
+
+Connecting Frontend and Backend
+Proxy Setup: Add the backend proxy to frontend/package.json:
+"proxy": "http://localhost:5000"
+
+
+
+db.users.insertOne({
+    name: "John Doe",
+    email: "john.doe@example3.com",
+    createdAt: new Date()
+})
+
+db.auth("inx", "password")
+
+db.updateUser("inx", {
+  roles: [
+    { role: "readWrite", db: "inx-docdb" },
+    { role: "dbOwner", db: "inx-docdb" } // Optional for full control
+  ]
+})
